@@ -1,0 +1,16 @@
+server:
+  port: 1000
+spring:
+  application:
+    name: platform-gateway
+zuul:
+  routes:
+    api-collect:
+      path: /api-collect/**
+      serviceId: parse-service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://admin:admin@localhost:1001/eureka/
